@@ -4,7 +4,7 @@ import os
 REAL_REPO = "blog-old"
 # =============================
 
-OLD = "/你的真实仓库名/"
+OLD = "/old-blog/blog-old/"
 NEW = f"/{REAL_REPO}/"
 
 changed_files = 0
