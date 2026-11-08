@@ -1,10 +1,10 @@
 import os
 
 # ===== 改成你的真实仓库名 =====
-REAL_REPO = "你的真实仓库名"
+REAL_REPO = "blog-old"
 # =============================
 
-OLD = "/new-repo-name/"
+OLD = "/你的真实仓库名/"
 NEW = f"/{REAL_REPO}/"
 
 changed_files = 0
