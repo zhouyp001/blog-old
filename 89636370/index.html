@@ -49,16 +49,16 @@
 <link rel="stylesheet" href="/blog-old/css/main.css?v=7.1.1">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog-old/images/apple-touch-icon-next.png?v=7.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog-old/image/apple-touch-icon-next.png?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog-old/images/favicon-32x32-next.png?v=7.1.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog-old/image/favicon-32x32-next.png?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog-old/images/favicon-16x16-next.png?v=7.1.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog-old/image/favicon-16x16-next.png?v=7.1.1">
 
 
-  <link rel="mask-icon" href="/blog-old/images/logo.svg?v=7.1.1" color="#222">
+  <link rel="mask-icon" href="/blog-old/image/logo.svg?v=7.1.1" color="#222">
 
 
 
@@ -362,7 +362,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/ke_yi_head.jpg">
+      <meta itemprop="image" content="/blog-old/images/ke_yi_head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -439,7 +439,7 @@
       
 
       
-        <div class="htmledit_views" id="content_views"><br>            <p><strong>希尔排序思想：</strong>插入排序的一种变体。由于插入排序对于特别乱的序列排序会很糟。而它就是先将序列变成接近有序的序列。</p><br><br><p><strong>排序步骤：</strong><br><br>举例：10、16、11、4、15、3、9、6、1、17、8、12、7</p><br><br><p>（1）分组：将上面序列分为6组，按照每一组按照相隔多少取一个数，比如第一组取0号、6号、12号。如下：</p><br><br><p style="text-align:center;"><img alt class="has" height="121" src="/blog-old/images/20190428134138587.png" width="404"></p><br><br><p> （2）分组排序：对每一组进行插入排序，得到数组的状态为7、1、4、8、3、9、16、11、17、15、12、10；如下：</p><br><br><p style="text-align:center;"><img alt class="has" height="128" src="/blog-old/images/20190428134756858.png" width="277"></p><br><br><p>（3）缩小分格距离（一般缩小为上一次分组的一般），继续分组，排序，知道分组距离为1。 </p><br><br><p><strong>排序图解：</strong></p><br><br><p><img alt class="has" height="208" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556440904482&amp;di=1fd941d457b11a8a5f004ddbde41fa9a&amp;imgtype=0&amp;src=http%3A%2F%2Fimg2018.cnblogs.com%2Fblog%2F1332969%2F201812%2F1332969-20181205235841818-800963141.gif" width="477"> <img alt class="has" src="https://gss0.bdstatic.com/7LsWdDW5_xN3otebn9fN2DJv/doc/pic/item/d1a20cf431adcbef3f0b6a8ca5af2edda3cc9f78.jpg"></p><br><br><p><strong>希尔排序代码：</strong> </p><br><br><pre class="has"><br><code class="language-java">public class Sheel_Sort {<br>    //对a序列中的第first组进行排序，<br>    //这个组是从first元素开始间距为<br>    //space的位置的所有元素<br>    private static &lt;T extends Comparable&lt;? super T&gt;&gt;<br>    void incrementalInsertionSort(T[] a,int first,int last,int space){<br>        int unsorted,i;<br>        for(unsorted=first+space;unsorted&lt;=last;unsorted=unsorted+space){<br>            T firstUnsorted=a[unsorted];<br>            for(i=unsorted-space;(i&gt;=first)&amp;&amp;(firstUnsorted.compareTo(a[i])&lt;0);i=i-space){<br>                a[i+space]=a[i];<br>            }<br>            a[i+space]=firstUnsorted;<br>        }<br>    }<br>    public static&lt;T extends Comparable&lt;? super T&gt;&gt;<br>    void shellSort(T[] a,int first,int last){<br>        int n=last-first+1;<br>        for(int space=n/2;space&gt;0;space=space/2){<br>            for(int begin=first;begin&lt;first+space;begin++){<br>                incrementalInsertionSort(a, begin, last, space);<br>            }<br>        }<br>    }<br>    public static void main(String[] args) {<br>        Integer[] a={9,8,7,6,5,4,3,2,1};<br>        Sheel_Sort.shellSort(a, 0, 8);<br>        for(Integer i:a){<br>            System.out.println(i);<br>        }<br>    }<br>}<br></code></pre><br><br><p><strong>时间复杂度：O(n^1.5) </strong>平均情况是这样，最坏情况还是n^2，如果当space为偶数时进行优化的话，可以实现搜友都是n^2<br><strong>空间复杂度：O(n)</strong></p><br>          </div>
+        <div class="htmledit_views" id="content_views"><br>            <p><strong>希尔排序思想：</strong>插入排序的一种变体。由于插入排序对于特别乱的序列排序会很糟。而它就是先将序列变成接近有序的序列。</p><br><br><p><strong>排序步骤：</strong><br><br>举例：10、16、11、4、15、3、9、6、1、17、8、12、7</p><br><br><p>（1）分组：将上面序列分为6组，按照每一组按照相隔多少取一个数，比如第一组取0号、6号、12号。如下：</p><br><br><p style="text-align:center;"><img alt class="has" height="121" src="/blog-old/image/20190428134138587.png" width="404"></p><br><br><p> （2）分组排序：对每一组进行插入排序，得到数组的状态为7、1、4、8、3、9、16、11、17、15、12、10；如下：</p><br><br><p style="text-align:center;"><img alt class="has" height="128" src="/blog-old/image/20190428134756858.png" width="277"></p><br><br><p>（3）缩小分格距离（一般缩小为上一次分组的一般），继续分组，排序，知道分组距离为1。 </p><br><br><p><strong>排序图解：</strong></p><br><br><p><img alt class="has" height="208" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556440904482&amp;di=1fd941d457b11a8a5f004ddbde41fa9a&amp;imgtype=0&amp;src=http%3A%2F%2Fimg2018.cnblogs.com%2Fblog%2F1332969%2F201812%2F1332969-20181205235841818-800963141.gif" width="477"> <img alt class="has" src="https://gss0.bdstatic.com/7LsWdDW5_xN3otebn9fN2DJv/doc/pic/item/d1a20cf431adcbef3f0b6a8ca5af2edda3cc9f78.jpg"></p><br><br><p><strong>希尔排序代码：</strong> </p><br><br><pre class="has"><br><code class="language-java">public class Sheel_Sort {<br>    //对a序列中的第first组进行排序，<br>    //这个组是从first元素开始间距为<br>    //space的位置的所有元素<br>    private static &lt;T extends Comparable&lt;? super T&gt;&gt;<br>    void incrementalInsertionSort(T[] a,int first,int last,int space){<br>        int unsorted,i;<br>        for(unsorted=first+space;unsorted&lt;=last;unsorted=unsorted+space){<br>            T firstUnsorted=a[unsorted];<br>            for(i=unsorted-space;(i&gt;=first)&amp;&amp;(firstUnsorted.compareTo(a[i])&lt;0);i=i-space){<br>                a[i+space]=a[i];<br>            }<br>            a[i+space]=firstUnsorted;<br>        }<br>    }<br>    public static&lt;T extends Comparable&lt;? super T&gt;&gt;<br>    void shellSort(T[] a,int first,int last){<br>        int n=last-first+1;<br>        for(int space=n/2;space&gt;0;space=space/2){<br>            for(int begin=first;begin&lt;first+space;begin++){<br>                incrementalInsertionSort(a, begin, last, space);<br>            }<br>        }<br>    }<br>    public static void main(String[] args) {<br>        Integer[] a={9,8,7,6,5,4,3,2,1};<br>        Sheel_Sort.shellSort(a, 0, 8);<br>        for(Integer i:a){<br>            System.out.println(i);<br>        }<br>    }<br>}<br></code></pre><br><br><p><strong>时间复杂度：O(n^1.5) </strong>平均情况是这样，最坏情况还是n^2，如果当space为偶数时进行优化的话，可以实现搜友都是n^2<br><strong>空间复杂度：O(n)</strong></p><br>          </div>
 
       
     </div>
@@ -531,7 +531,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/blog-old/images/ke_yi_head.jpg" alt="ke_yi_">
+              <img class="site-author-image" itemprop="image" src="/blog-old/image/ke_yi_head.jpg" alt="ke_yi_">
             
               <p class="site-author-name" itemprop="name">ke_yi_</p>
               <div class="site-description motion-element" itemprop="description"></div>
